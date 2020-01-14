@@ -104,7 +104,7 @@ def pinGen2(n, pins):
 	return chain.from_iterable(map(newFSOrbitIter, newFSPRootGen(sorted(pins), n)))
 
 def newFSOrbitIter(m):
-	"""Generates all permutations in the same Foata-Strehl orbit of the given pinnalce."""
+	"""Generates all permutations in the same Foata-Strehl orbit of the given pinnacle."""
 	out = [m]
 	V = tTAdd(m)[1]
 	for x in filter(lambda i: i not in V, range(len(m))):
@@ -187,12 +187,16 @@ def arrGen(P,V):  #Let P and V be sorted lists
 
 def valeSetGenF(P):
 	"""Given a pinnacle set, generates all admissible vale sets."""
+	#Does so by (after checking for the trival case) invoking valeSetGenFSub
 	P = sorted(P)
 	if not P:
 		return ([0],)
 	return valeSetGenFSub(P, set(P))
 
 def valeSetGenFSub(P, pSet = None):
+	"""Recursive component of valeSetGenF."""
+	#Essentially, this function works by adding vales in descending order.
+	#For a pinnacle set P = [p1 < p2 < ... < pk], generates all vale sets V = [0 = v0 < v1 < v2 < ... < vk], with the condition that (vi < pi) and (vi not in pSet) for all i from 1 to k.
 	pm = P.pop(0)
 	if not P:
 		for v in filter(lambda i : i not in pSet, range(1, pm)):
