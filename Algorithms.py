@@ -1,4 +1,6 @@
 
+from itertools import chain, repeat
+
 def factorial(n):
 	"""Returns n! for a non-negative integer n."""
 	acc = 1
