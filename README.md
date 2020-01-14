@@ -31,10 +31,11 @@ Note that each of these methods return iterators as opposed to lists.
   - Given a permutation `pi`, returns two integers which can be used to recover the permutation.
   - Reverse of `deserialize`.
 - `deserialize(number, size) -> pi`
-  - Given a `number` in `range(0, factorial(size))`, returns a permutation of that size.
+  - Given a `number` in `range(0, factorial(size))`, returns a permutation of that `size`.
   - Reverse of `serialize`
 - `getPV(x) -> P, V`
   - Given a permutation, returns the pinnacle and vale set of the permutation.
 - `pin(x) -> P`
   - Given a permutation, returns the pinnacle set of the permutation.
-- There are more.  All (except perhaps those with the suffix `-Sub`) have a docstring describing the effect of the method, and some have an additional comment further explaining the functioning of the method.
+- All the functions involved in the working of `pinGen2`.
+  - See docstrings and comments for further explanation.
