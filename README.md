@@ -7,6 +7,8 @@ Here we highlight two methods, `pinGen1` and `pinGen2`.
 
 Note that each of these methods return iterators as opposed to lists.
 
+Also note here the natural numbers are taken to be the non-negative (as opposed to positive) integers.
+
 ### Breakdown of methods
 
 ###### Main Methods:
