@@ -37,3 +37,4 @@ Note that each of these methods return iterators as opposed to lists.
   - Given a permutation, returns the pinnacle and vale set of the permutation.
 - `pin(x) -> P`
   - Given a permutation, returns the pinnacle set of the permutation.
+- There are more.  All (except perhaps those with the suffix `-Sub`) have a docstring describing the effect of the method, and some have an additional comment further explaining the functioning of the method.
