@@ -25,7 +25,7 @@ Also note here the natural numbers are taken to be the non-negative (as opposed 
   - Generates all and only those permutations in _Sn_ with the desired pinnacle set.
   - For proof that this method produces what it claims, see paper ***link paper***.
 
-###### Examples:
+### Examples:
 
 `>>> [*pinGen1(5, {3, 4})]`<br/>
 `[[0, 3, 1, 4, 2], [1, 3, 0, 4, 2], [2, 3, 0, 4, 1], [0, 4, 1, 3, 2],`<br/>
