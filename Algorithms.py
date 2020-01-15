@@ -72,6 +72,9 @@ def pin(x):
 	"""Returns the pinnacle set of the given permutation."""
 	return getPV(x)[0]
 
+def vale(x):
+	return getPV(x)[1]
+
 def pinGen1(n, pins):
 	"""Returns permutations from Sn with pinnacle set 'pins'.
 	
@@ -106,7 +109,7 @@ def pinGen2(n, pins):
 def newFSOrbitIter(m):
 	"""Generates all permutations in the same Foata-Strehl orbit of the given pinnacle."""
 	out = [m]
-	V = tTAdd(m)[1]
+	V = vale(m)
 	for x in filter(lambda i: i not in V, range(len(m))):
 		new = [fSActionX(m, x) for m in out]
 		out.extend(new)
@@ -184,6 +187,14 @@ def arrGen(P,V):  #Let P and V be sorted lists
 			a.insert(j+1,v2) #this line, and the following produce a, corresponding to a'.
 			a.insert(j,v1)
 			yield a
+
+def subsetIter(coll, k):
+	"""Iterates through the 'k'-element subsets of 'coll'."""
+	if k == 0: yield []; return
+	tCol = coll.copy()
+	for _ in range(k-1, len(tCol)):
+		x = tCol.pop()
+		for i in subsetIter(tCol, k-1): i.append(x); yield i
 
 def valeSetGenF(P):
 	"""Given a pinnacle set, generates all admissible vale sets."""
